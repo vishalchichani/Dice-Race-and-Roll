@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Dice(){
+function Dice(props){
     return(
 
             <div className='dice'> 
-                <h2> 1 </h2>
+                <h2> {props.value} </h2>
             </div>
         
     )
