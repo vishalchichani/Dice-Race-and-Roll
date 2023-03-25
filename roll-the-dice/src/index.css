@@ -17,6 +17,7 @@ code {
     height: 450px;
     max-width: 1350px;
     margin: 50px;
+    margin-bottom: 20px;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -56,4 +57,15 @@ code {
 h1{
   color: white;
   
+}
+
+button{
+  display:block;
+  margin: 20px auto;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 5px;
+  border-radius: 10px;
+  width: 200px;
+  cursor: pointer;
 }
