@@ -5,17 +5,19 @@ function App() {
     function generateDice(){
       let diceValue=[];
       for(let i=0; i<10;i++){
-        diceValue.push(Math.ceil(Math.random()*6));
+        diceValue.push( {value: Math.ceil(Math.random()*6), isHold:false});
       }
       return diceValue; 
     }
     
     const [dice, setDice] = React.useState(generateDice());
     
+   
+
     let newDice =[];
     newDice=dice.map(item => {
       return (
-        <Dice value={item} />
+        <Dice value={item.value} isHold={item.isHold} />
       )
     })
 
@@ -36,6 +38,10 @@ function App() {
           </div>
       </div>
       <button className='btn' onClick={rollTheDice}> ROLL </button>
+      <div className='score'>
+        <h2> 0 </h2>
+        <h3>Personal Best: </h3>
+      </div>
       </div>
     )
 }
