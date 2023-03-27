@@ -15,7 +15,11 @@ function App() {
     }
 
     function rollTheDice(){
-      setDice(generateDice());
+      setDice(prevState => prevState.map(item => {
+        return item.isHold ? 
+        item : 
+        {...item, value: Math.ceil(Math.random()*6)}
+      }));
     }
     
     function handleClick(id){
