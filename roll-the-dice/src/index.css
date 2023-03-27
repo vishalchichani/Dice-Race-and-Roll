@@ -85,3 +85,30 @@ button{
   font-family: 'Rubik';
   
 }
+
+.score{
+  text-align: center;
+  font-family: 'Rubik';
+  margin:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 80px;
+}
+
+.score > h2{
+  border: 2px solid black;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score >h3{
+  color: slateblue;
+  font-weight: bold;
+}
