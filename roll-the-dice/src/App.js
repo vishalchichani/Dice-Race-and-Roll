@@ -5,7 +5,19 @@ function App() {
     
     
     const [dice, setDice] = React.useState(generateDice());
+    const [moves, setMoves] = React.useState(0);
+    const [allSame, setAllSame] = React.useState(false);
     
+
+    React.useEffect(() => {
+      const allHold = dice.every(die => die.isHold);
+      const sameValue = dice[0].value;
+      const allValueSame = dice.every(die => die.value === sameValue);
+      if(allHold && allValueSame){
+          setAllSame(true);
+      }
+    },[dice]);
+
     function generateDice(){
       let diceValue=[];
       for(let i=0; i<10;i++){
@@ -15,11 +27,20 @@ function App() {
     }
 
     function rollTheDice(){
+
+      if(allSame){
+        setAllSame(false);
+        setDice(generateDice());
+        setMoves(0);
+      }
       setDice(prevState => prevState.map(item => {
         return item.isHold ? 
         item : 
         {...item, value: Math.ceil(Math.random()*6)}
       }));
+
+      setMoves(prevState => prevState+1);
+
     }
     
     function handleClick(id){
@@ -49,16 +70,16 @@ function App() {
       <div>
       <div className='container'>
         <div className='head'>
-          <h1> Roll the Dice!</h1>
+          <h1> {allSame ? "You Won!" : "Roll the Dice!"} </h1>
           <p> Freeze all the dice at same number in minimum number of moves. Make your choice wisely!</p>
         </div>
           <div className='dice-box'>
             {newDice}
           </div>
       </div>
-      <button className='btn' onClick={rollTheDice}> ROLL </button>
+      <button className='btn' onClick={rollTheDice}> {allSame ? "NEW GAME" : "ROLL"} </button>
       <div className='score'>
-        <h2> 0 </h2>
+        <h2> {moves} </h2>
         <h3>Personal Best: </h3>
       </div>
       </div>
