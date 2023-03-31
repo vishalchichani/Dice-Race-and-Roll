@@ -1,6 +1,7 @@
 import React from 'react';
 import Dice from './Dice';
 import { nanoid } from 'nanoid';
+import Confetti from 'react-confetti';
 function App() {
 
 
@@ -76,6 +77,7 @@ function App() {
 
   return (
     <div>
+      {allSame && <Confetti />} 
       <div className='container'>
         <div className='head'>
           <h1> {allSame ? "You Won!" : "Roll the Dice!"} </h1>
