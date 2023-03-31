@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Dice-Race-and-Roll/static/css/main.9b6328fe.css",
-    "main.js": "/Dice-Race-and-Roll/static/js/main.9d504314.js",
+    "main.js": "/Dice-Race-and-Roll/static/js/main.a3da2153.js",
     "index.html": "/Dice-Race-and-Roll/index.html",
     "main.9b6328fe.css.map": "/Dice-Race-and-Roll/static/css/main.9b6328fe.css.map",
-    "main.9d504314.js.map": "/Dice-Race-and-Roll/static/js/main.9d504314.js.map"
+    "main.a3da2153.js.map": "/Dice-Race-and-Roll/static/js/main.a3da2153.js.map"
   },
   "entrypoints": [
     "static/css/main.9b6328fe.css",
-    "static/js/main.9d504314.js"
+    "static/js/main.a3da2153.js"
   ]
 }
